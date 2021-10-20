@@ -1,0 +1,9 @@
+### Number of Tiles ##################################################
+6
+### Tiles ############################################################
+./DATA/LVL1/BG/Background_Image_1.png
+./DATA/LVL1/BG/Background_Image_2.png
+./DATA/LVL1/BG/Background_Image_3.png
+./DATA/LVL1/BG/Background_Image_4.png
+./DATA/LVL1/BG/Background_Image_5.png
+./DATA/LVL1/BG/Background_Image_6.png
