@@ -1,7 +1,7 @@
 sub LoadSettings()
-	if(FileExists("./DATA/SETTINGS.TXT")) then
+	if(FileExists(LoadSavePath + "SETTINGS.TXT")) then
 		File = Freefile()
-		FileOpen(File, "./DATA/SETTINGS.TXT",TEXT_INPUT)
+		FileOpen(File, LoadSavePath + "SETTINGS.TXT",TEXT_INPUT)
 		
 		SETTINGS_DIFFICULTY = val(ReadLine(File))
 		print "Difficulty: " + str(SETTINGS_DIFFICULTY)

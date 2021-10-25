@@ -100,9 +100,9 @@ sub GUI_Show_Stars()
 end sub
 
 sub GUI_Load_Highscore()
-	if(FileExists("./DATA/HIGHSCORE.TXT")) then
+	if(FileExists(LoadSavePath + "HIGHSCORE.TXT")) then
 		File = Freefile()
-		FileOpen(File, "./DATA/HIGHSCORE.TXT",TEXT_INPUT)
+		FileOpen(File, LoadSavePath + "HIGHSCORE.TXT",TEXT_INPUT)
 		for ii = 0 to 8
 			HighscoreName$[ii] = ReadLine(File)
 			HighscoreValue[ii] = val(ReadLine(File))
@@ -118,7 +118,7 @@ end sub
 
 sub GUI_Save_Highscore()
 	File = Freefile()
-	FileOpen(File, "./DATA/HIGHSCORE.TXT",TEXT_OUTPUT)
+	FileOpen(File, LoadSavePath + "HIGHSCORE.TXT",TEXT_OUTPUT)
 	for ii = 0 to 8
 		WriteLine(File, HighscoreName$[ii])
 		WriteLine(File, str(HighscoreValue[ii]))
@@ -128,7 +128,7 @@ end sub
 
 sub GUI_SaveSettings()
 	File = Freefile()
-	FileOpen(File, "./DATA/SETTINGS.TXT",TEXT_OUTPUT)
+	FileOpen(File, LoadSavePath + "SETTINGS.TXT",TEXT_OUTPUT)
 	
 	WriteLine(File, str(SETTINGS_DIFFICULTY))
 	WriteLine(File, str(SETTINGS_VSYNC))

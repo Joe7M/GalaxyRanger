@@ -12,6 +12,7 @@ DIM PlayerShots[MAX_PLAYER_SHOTS,5]
 DIM EnemyShots[ENEMY_MAX_SHOTS,7]
 DIM Bonus[BONUS_MAX_BONUS,6]
 DIM Player[2, 15]
+LoadSavePath$ = PrefPath$("J7M", "GalaxyRanger")
 
 
 sub Init_Window()
@@ -44,7 +45,9 @@ sub Init()
 	TickStart = Timer()
 	TimeStep = 0
 	NumberOfFrames = 0
-	Position = 0
+	if(not IsTesting) then
+		Position = 0
+	end if
 	LevelTilePosX = 0
 	ScrollOffset = 0
 	GameTicks = 0

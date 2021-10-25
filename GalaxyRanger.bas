@@ -4,7 +4,7 @@
 
 ' For testing
 IsTesting = false
-Start_Position = 5590
+Start_Position = 1590
 Number_of_Bonus_HitPoints = 0
 Number_of_Bonus_Speed = 3
 Number_of_Bonus_Power = 1
@@ -29,6 +29,8 @@ Init_Window()
 Load_GlobalData()
 Init()
 GUI_Load_Highscore()
+
+
 
 
 if(IsTesting) then
@@ -164,6 +166,11 @@ while(Program_is_running)
 		DrawLevel_Front_Layer()
 		'DrawInfos()
 		
+		if(not WindowExists(0)) then
+			WindowClose(0)
+			end
+		end if
+		
 		update
 		
 		TimeStep = ((Timer() - MeassureFrameTimeStart))
@@ -255,6 +262,11 @@ while(Program_is_running)
 				DrawImage(MENUE_IMAGE_ID_FONT_64x64 + asc("R"), PosX_Over+64*3 , PosY)
 			end if
 		
+			if(not WindowExists(0)) then
+				WindowClose(0)
+				end
+			end if
+		
 			update
 			TimeStep = ((Timer() - MeassureFrameTimeStart))
 			if(TimeStep < 20) then 'Throttle to 20ms per frame
@@ -311,6 +323,12 @@ while(Program_is_running)
 			GUI_Show_Stars()
 			GUI_Show_Highscore()
 			
+			
+			if(not WindowExists(0)) then
+				WindowClose(0)
+				end
+			end if
+		
 			update()	
 		
 			TimeStep = ((Timer() - MeassureFrameTimeStart))
@@ -342,5 +360,6 @@ print(NumberOfFrames / ElapsedTime)
 
 end
 '#############################################################################################
+
 
 
