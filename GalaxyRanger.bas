@@ -189,6 +189,7 @@ while(Program_is_running)
 	end if
 		
 	'####################### Game Over Loop #######################
+
 	if(GAME_STATE <> GAME_STATE_LEVEL_FINISHED) then
 		
 		Level_Number = 1
@@ -220,12 +221,12 @@ while(Program_is_running)
 			ClearCanvas()
 			DrawImage(ImageID,0,0)
 			
-			
+		
 			
 			if(GAME_STATE = GAME_STATE_ALL_LEVEL_FINISHED) then
 				
 				PosX_Game = PosX_Game - 1
-				if(PosX_Game < -64*14) then
+				if(PosX_Game < -64*15) then
 					PosX_Game = 640
 				end if
 			
@@ -243,6 +244,7 @@ while(Program_is_running)
 				DrawImage(MENUE_IMAGE_ID_FONT_64x64 + asc("I"), PosX_Game+64*11 , PosY)
 				DrawImage(MENUE_IMAGE_ID_FONT_64x64 + asc("O"), PosX_Game+64*12 , PosY)
 				DrawImage(MENUE_IMAGE_ID_FONT_64x64 + asc("N"), PosX_Game+64*13 , PosY)
+				DrawImage(MENUE_IMAGE_ID_FONT_64x64 + asc("S"), PosX_Game+64*14 , PosY)
 			else
 				PosX_Game = PosX_Game - 1
 				if(PosX_Game < -64*4) then
